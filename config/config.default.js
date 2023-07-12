@@ -23,29 +23,33 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
-  const mysql = {
-    // database configuration
+  config.mysql = {
     client: {
-      // host
       host: '123.60.13.75',
-      // port
       port: '3306',
-      // username
-      user: 'my-egg',
-      // password
-      password: 'bnT8Pp2PbDkfY8x3',
-      // database
-      database: 'my-egg',
+      user: 'myegg',
+      password: 'izYatjDBstzyik3E',
+      database: 'egg',
     },
-    // load into app, default is open
     app: true,
-    // load into agent, default is close
     agent: false,
+  };
+
+  config.security = {
+    scrf: {
+      enable: false,
+      ignoreJSON: true,
+    },
+    domainWhiteList: [ '*' ],
+  };
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET.Headers,PUT,DELETE,UPDATE',
   };
 
   return {
     ...config,
     ...userConfig,
-    ...mysql,
   };
 };

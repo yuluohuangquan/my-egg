@@ -10,9 +10,10 @@ class HomeController extends Controller {
 
   async test() {
     const { ctx } = this;
-    const result = await this.app.mysql.get('react_blog', {});
+    const result = await this.app.mysql.get('daohang', {});
+
     console.log(result);
-    ctx.body = result + '2';
+    ctx.body = result + '4';
   }
 }
 
