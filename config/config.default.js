@@ -36,7 +36,7 @@ module.exports = appInfo => {
   };
 
   config.security = {
-    scrf: {
+    csrf: {
       enable: false,
       ignoreJSON: true,
     },
@@ -45,7 +45,7 @@ module.exports = appInfo => {
 
   config.cors = {
     origin: '*',
-    allowMethods: 'GET.Headers,PUT,DELETE,UPDATE',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
   };
 
   return {
